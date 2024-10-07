@@ -11,9 +11,6 @@ on:
         description: "Docker TAG"
         required: true
         default: "master"
-
-env:
-  NODE_TLS_REJECT_UNAUTHORIZED: 0
     
 jobs:
   push_to_registry:
@@ -48,7 +45,7 @@ jobs:
         uses: aquasecurity/trivy-action@master
         with:
           #image-ref: 'docker.io/my-organization/my-app:${{ github.sha }}'
-          image-ref: 'docker.io/hwankoo/testedu1:master'
+          image-ref: 'docker.io/hwankoo/testedu1'
           format: 'sarif'
           output: 'trivy-results.sarif'
 
