@@ -91,7 +91,7 @@ jobs:
         uses: aquasecurity/trivy-action@master
         with:
           #image-ref: 'docker.io/my-organization/my-app:${{ github.sha }}'
-          image-ref: 'docker.io/shclub/edu12-4:master'
+          image-ref: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           format: 'sarif'
           output: 'trivy-results.sarif'
 
